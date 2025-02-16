@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+  <header class="header bg-transparent fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50">
+    <a href="#" class="logo text-2xl text-white font-semibold">Yeabsira.</a>
+    <nav class="navbar flex space-x-4">
+      <a href="#" class="active text-lg text-white font-medium hover:text-blue-500 transition duration-300">Home</a>
+      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">About</a>
+      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">Portfolio</a>
+      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">Blog</a>
+      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">Contact</a>
+    </nav>
+  </header>
+  
+  <section class="home h-screen bg-cover bg-center flex items-center p-5" style="background-image: url('home.jpg');">
+    <div class="home-content max-w-md bg-transparent">
+      <h1 class="text-5xl font-bold mb-4">Hello, I'm Yeabsira Terefe</h1>
+      <h3 class="text-3xl font-bold text-blue-500 mb-4">Front-end Developer</h3>
+      <p class="text-lg mb-8">
+        Self-taught software developer with a passion for crafting innovative solutions. Possessing a strong foundation in programming fundamentals, I am adept at building robust and scalable applications. Currently, we are expanding our expertise in artificial intelligence to optimize problem-solving and enhance development efficiency. Seeking a challenging role in the tech industry to contribute to cutting-edge projects.
+      </p>
+      <div class="btn-box flex space-x-4">
+        <a href="#" class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-transparent hover:text-blue-500 border-2 border-blue-500">Hire Me</a>
+        <a href="#" class="px-6 py-3 bg-transparent text-blue-500 font-semibold rounded-lg border-2 border-blue-500 transition duration-300 hover:bg-blue-500 hover:text-white">Let's Talk</a>
+      </div>
+    </div>
+    <div class="home-sci flex space-x-4 fixed bottom-10">
+      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-facebook'></i></a>
+      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-linkedin'></i></a>
+      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-telegram'></i></a>
+      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-github'></i></a>
+    </div>
+  </section>
+  
+  <span class="home-imgHover fixed top-0 right-20 w-80 h-full bg-transparent transition duration-700 hover:bg-blue-900 hover:opacity-80"></span>
+
+  <script src="script.js"></script>
+</body>
+</html>
