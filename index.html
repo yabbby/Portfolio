@@ -1,47 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Data -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Yeabsira's Personal Website</title>
+  <!-- Tailwind CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Custom Styles (Optional) -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- Font Awesome (Replace 'your-kit-id' with your actual Kit ID, or use CDN link) -->
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-CoaSAXlOMrCA1iue4AwIr1sQXa1TT1SFEqzJokMfhRWikO8x27Utky1hWm7+fjP/sUsvtspB8tP3Mvlv3aYk1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ... other head elements ... -->
+
+  <!-- Tailwind CSS via CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
 </head>
-<body class="bg-gray-900 text-white">
-  <header class="header bg-transparent fixed top-0 left-0 w-full p-5 flex justify-between items-center z-50">
-    <a href="#" class="logo text-2xl text-white font-semibold">Yeabsira.</a>
-    <nav class="navbar flex space-x-4">
-      <a href="#" class="active text-lg text-white font-medium hover:text-blue-500 transition duration-300">Home</a>
-      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">About</a>
-      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">Portfolio</a>
-      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">Blog</a>
-      <a href="#" class="text-lg text-white font-medium hover:text-blue-500 transition duration-300">Contact</a>
-    </nav>
-  </header>
-  
-  <section class="home h-screen bg-cover bg-center flex items-center p-5" style="background-image: url('home.jpg');">
-    <div class="home-content max-w-md bg-transparent">
-      <h1 class="text-5xl font-bold mb-4">Hello, I'm Yeabsira Terefe</h1>
-      <h3 class="text-3xl font-bold text-blue-500 mb-4">Front-end Developer</h3>
-      <p class="text-lg mb-8">
-        Self-taught software developer with a passion for crafting innovative solutions. Possessing a strong foundation in programming fundamentals, I am adept at building robust and scalable applications. Currently, we are expanding our expertise in artificial intelligence to optimize problem-solving and enhance development efficiency. Seeking a challenging role in the tech industry to contribute to cutting-edge projects.
-      </p>
-      <div class="btn-box flex space-x-4">
-        <a href="#" class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg transition duration-300 hover:bg-transparent hover:text-blue-500 border-2 border-blue-500">Hire Me</a>
-        <a href="#" class="px-6 py-3 bg-transparent text-blue-500 font-semibold rounded-lg border-2 border-blue-500 transition duration-300 hover:bg-blue-500 hover:text-white">Let's Talk</a>
+<body class="bg-gray-900 text-gray-300 font-sans">
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full bg-gray-900 z-50">
+  <div class="container mx-auto flex items-center justify-between py-5 px-6">
+    <a href="#">
+      <img src="assets/images/logo.png" alt="Logo" class="h-12 inline-block mr-2 rounded-full">
+      <span class="text-teal-400 text-2xl font-bold">Yeabsira Abinet<span class="text-teal-400">.</span></span>
+    </a>
+    <div class="hidden md:flex space-x-8">
+      <a href="#about" class="text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">About</a>
+      <a href="#portfolio" class="text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">Portfolio</a>
+      <a href="#elevator" class="text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">Elevator Pitch</a>
+      <a href="#contact" class="text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">Contact</a>
+    </div>
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-teal-400 focus:outline-none">
+        <i class="fas fa-bars fa-2x"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="menu" class="hidden md:hidden bg-gray-800">
+    <a href="#about" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">About</a>
+    <a href="#portfolio" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">Portfolio</a>
+    <a href="#elevator" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">Elevator Pitch</a>
+    <a href="#contact" class="block px-6 py-4 text-gray-300 hover:text-white hover:bg-teal-600 hover:border hover:border-yellow-500 focus:text-white focus:bg-teal-600 focus:border focus:border-yellow-500 font-semibold rounded">Contact</a>
+  </div>
+</nav>
+  <!-- Hero Section -->
+  <section class="h-screen flex items-center bg-gray-900" id="hero">
+    <div class="container mx-auto px-6">
+      <div class="max-w-2xl">
+        <p class="text-teal-400 mb-4">Hi, my name is</p>
+        <h1 class="text-5xl font-bold text-gray-100 mb-4">Yeabsira Abinet Terefe.</h1>
+        <h2 class="text-4xl font-bold text-gray-400 mb-4">I build innovative solutions that bridge engineering and technology.</h2>
+        <p class="text-gray-400 mb-8">I'm a chemical engineer and software developer who specializes in creating exceptional digital experiences.</p>
+        <a href="#portfolio" class="inline-block px-8 py-4 border border-yellow-500 text-orange-500 hover:bg-yellow-500 hover:text-white rounded">View My Work</a>
       </div>
     </div>
-    <div class="home-sci flex space-x-4 fixed bottom-10">
-      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-facebook'></i></a>
-      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-linkedin'></i></a>
-      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-telegram'></i></a>
-      <a href="#" class="w-10 h-10 flex justify-center items-center border-2 border-blue-500 text-blue-500 rounded-full transition duration-300 hover:bg-blue-500 hover:text-white"><i class='bx bxl-github'></i></a>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 bg-gray-900" id="about">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-100 mb-8">About Me</h2>
+      <div class="md:flex md:space-x-12">
+        <div class="md:w-2/3">
+          <p class="mb-4 text-gray-400">
+            I'm Yeabsira Abinet Terefe, a dedicated and passionate software developer at YKA Solutions. I craft innovative and user-friendly web applications. My ambition is to develop a marketplace where individuals can sell and share their unique ideas, and I'm motivated by the transformative power of technology to empower communities.
+          </p>
+          <p class="mb-4 text-gray-400">
+            Currently, I work as an administrator at Tengery Trading, leveraging my extensive experience in creating dynamic websites using the MERN stack, Flask, and Django. Notable achievements include leading a team to develop a scalable e-commerce platform and implementing advanced security measures that enhanced the platform's reliability and user trust.
+          </p>
+          <p class="mb-4 text-gray-400">
+            My company brand, Ethiopreneur, reflects my goal to create a platform for selling and buying business ideas, similar to a consulting company. My personal freelancing brand, YKA Solutions, showcases my diverse skills and commitment to delivering excellent projects for various sources.
+          </p>
+        </div>
+        <div class="md:w-1/3 mt-8 md:mt-0">
+          <img src="assets/images/pic1.png" alt="Profile Picture" class="rounded-lg mx-auto w-2/3 md:w-full">
+        </div>
+      </div>
     </div>
   </section>
-  
-  <span class="home-imgHover fixed top-0 right-20 w-80 h-full bg-transparent transition duration-700 hover:bg-blue-900 hover:opacity-80"></span>
+<!-- Portfolio Section -->
+<section class="py-20 bg-gray-800" id="portfolio">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-100 mb-8">Portfolio</h2>
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-teal-400 mb-6">Experience</h3>
+      <!-- Experience Item -->
+      <div class="bg-gray-900 rounded-lg shadow-lg p-6 mb-8 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+        <h4 class="text-xl font-semibold text-gray-100">Web Developer, ALX</h4>
+        <span class="text-gray-400 text-sm">Remote | January 2024 - February 2025</span>
+        <ul class="list-disc list-inside mt-4 text-gray-400 space-y-2">
+          <li>Coded websites using HTML, CSS, JavaScript, and jQuery languages.</li>
+          <li>Planned website development, converting mockups into usable web presence with HTML, JavaScript, AJAX, and JSON coding.</li>
+          <li>Provided front-end development support, creating visually appealing designs aligned with brand standards.</li>
+        </ul>
+      </div>
+      <!-- Volunteer Work -->
+      <div class="bg-gray-900 rounded-lg shadow-lg p-6 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+        <h4 class="text-xl font-semibold text-gray-100">Web Developer Intern, Prodigy</h4>
+        <span class="text-gray-400 text-sm">Remote | November 2024 - December 2024</span>
+        <ul class="list-disc list-inside mt-4 text-gray-400 space-y-2">
+          <li>Wrote custom HTML and JavaScript for existing websites.</li>
+          <li>Developed user interfaces with modern JavaScript frameworks, HTML5, and CSS3.</li>
+          <li>Developed interactive prototypes using HTML, CSS, JavaScript, and jQuery for client presentations and feedback sessions.</li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- Projects -->
+    <div>
+      <h3 class="text-2xl font-bold text-teal-400 mb-6">Projects</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+          <img src="assets/images/BookMatch.png" alt="BookMatch" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold text-gray-100 mb-2">BookMatch</h4>
+            <p class="text-gray-400 mb-4">A comprehensive book reviewer website and book store application designed to connect avid readers and provide them with a platform to share reviews and purchase books.</p>
+            <a href="https://github.com/yabbby/BookMatch" class="text-teal-400 hover:underline" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+          <img src="assets/images/TaskTide.png" alt="TaskTide" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold text-gray-100 mb-2">TaskTide</h4>
+            <p class="text-gray-400 mb-4">TaskTide is a weekend planning website that helps users organize their activities with ease. It offers a visually appealing layout, a calendar feature, and customizable task lists.</p>
+            <a href="https://github.com/yabbby/TaskTide" class="text-teal-400 hover:underline" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+          <img src="assets/images/EagleEye.png" alt="EagleEye" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h4 class="text-xl font-semibold text-gray-100 mb-2">EagleEye</h4>
+            <p class="text-gray-400 mb-4">An innovative web application dedicated to environmental cleanliness. Users can report full trash cans to the relevant authorities, promoting prompt action and a cleaner environment.</p>
+            <a href="https://github.com/yabbby/EagleEye" class="text-teal-400 hover:underline" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Discover More Button -->
+  <div class="btn-box mt-8 p-4 bg-gray-700 rounded inline-block text-center transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 hover:bg-teal-500">
+    <p class="text-gray-200 mb-2">Want to see more? Check out my portfolio website for more projects and details.</p>
+    <a href="https://github.com/yabbby" class="inline-block px-8 py-4 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white rounded">Discover More</a>
+  </div>
+  </div>
+</section>
+
+ <!-- Elevator Pitch Section -->
+<section class="py-20 bg-gray-900" id="elevator">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-100 mb-8 text-center">Elevator Pitch</h2>
+    <div class="max-w-4xl mx-auto text-gray-400 space-y-6">
+      <!-- Elevator Pitch Content -->
+      <p>Hello, my name is Yeabsira Abinet Terefe. I am a dedicated chemical engineering student with four years of experience in teamwork and collaborative communication. Recently, I contributed to an integrated team project that ranked in the top ten out of a hundred, showcasing my ability to thrive in diverse teams.</p>
+      <p>Beyond my engineering background, I am a passionate software developer skilled in web programming languages, including Python, HTML, CSS, and JavaScript. I have built a fully functional bookstore website, a weekly planner app, and several other applications. My expertise in artificial intelligence and tools like Google Workspaces allows me to innovate and streamline processes effectively.</p>
+      <p>I am inspired by the transformative power of software engineering and aspire to build websites, applications, and more, with the ultimate goal of integrating technology into every aspect of life. Also I am gaining valuable experience through freelancing.</p>
+      <p>My top skills include excellent communication, charismatic leadership, and effective collaboration. My ability to handle stress and manage difficult situations sets me apart. I have successfully pursued chemical engineering while simultaneously learning software engineering and other personal development courses such as virtual assistance and artificial intelligence.</p>
+      <p>My diverse experiences and knowledge enable me to contribute significantly to any company. It’s challenging not to leverage my skills to their fullest potential.</p>
+      <p>I would love to discuss how my unique blend of engineering and software development can benefit your team. Let’s connect to explore how we can work together to drive innovation in your organization.</p>
+    </div>
+    <!-- YouTube Video Embed -->
+    <div class="max-w-4xl mx-auto mt-8">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/PmqJZHWm7JA " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full rounded-lg"></iframe>
+    </div>
+
+    <div class="btn-box mt-6 flex justify-center space-x-4">
+      <a href="https://www.linkedin.com/in/yeabsira-terefe-499034256/" class="inline-block px-8 py-4 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white rounded">Hire Me</a>
+      <a href="https://docs.google.com/document/d/1OosB4BTDENiinSnPwPgusxFHC7bmHzHo/edit?usp=sharing&ouid=114870146840007353307&rtpof=true&sd=true" class="inline-block px-8 py-4 border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white rounded" target="_blank">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-gray-800" id="contact">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-100 mb-8">Contact Me</h2>
+      <p class="text-gray-400 mb-8">I'm currently open to new opportunities. Feel free to reach out if you have any questions or just want to connect.</p>
+      <p class="text-gray-100 mb-4">Email: <a href="mailto:ye.aba.net@gmail.com" class="text-teal-400 hover:underline">ye.aba.net@gmail.com</a></p>
+
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.linkedin.com/in/yeabsira-terefe-499034256/" target="_blank" class="text-gray-100 hover:text-teal-400 text-2xl"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/yabbby" target="_blank" class="text-gray-100 hover:text-teal-400 text-2xl"><i class="bx bxl-github"></i></a>
+        <a href="https://x.com/YabbyAK" target="_blank" class="text-gray-100 hover:text-teal-400 text-2xl"><i class="bx bxl-twitter"></i></a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-gray-400">&copy; 2025 Yeabsira Abinet Terefe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>

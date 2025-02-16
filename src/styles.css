@@ -1,0 +1,93 @@
+/* styles.css */
+
+/* Custom Fonts (Optional) */
+/* Include Google Fonts or other fonts if desired */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Apply custom font */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Additional custom styles */
+
+/* Example: Adjusting the background color of the hero section */
+#hero {
+  background-image: url('assets/images/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Example: Styling the scrollbar (Optional) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a202c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4fd1c5;
+}
+/* Add these styles to your CSS file or <style> block */
+.btn-box .btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 9rem; /* 36 * 0.25rem */
+  height: 3rem; /* 12 * 0.25rem */
+  border-width: 2px;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  letter-spacing: 0.05em; /* tracking-wide */
+  z-index: 10;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.hire-me {
+  background-color: #ffcc00; /* Changed to yellow */
+  border-color: #ffcc00; /* Changed to yellow */
+  color: #f7fafc; /* text-gray-100 */
+}
+.hire-me:hover {
+  color: #ffcc00; /* Changed to yellow */
+}
+.hire-me::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #f7fafc; /* bg-gray-100 */
+  z-index: -1;
+  transition: all 0.5s;
+}
+.hire-me:hover::before {
+  width: 100%;
+}
+.download-resume {
+  background-color: transparent;
+  border-color: #ffcc00; /* Changed to yellow */
+  color: #ffcc00; /* Changed to yellow */
+}
+.download-resume:hover {
+  color: #f7fafc; /* Equivalent to text-gray-100 */
+}
+.download-resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ffcc00; /* Changed to yellow */
+  z-index: -1;
+  transition: all 0.5s;
+}
+.download-resume:hover::before {
+  width: 100%;
+}
